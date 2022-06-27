@@ -10,7 +10,7 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  late FirebaseService _firebaseService;
+  FirebaseService? _firebaseService;
   double? _deviceheight, _deviceWidth;
   @override
   void initState() {
@@ -43,7 +43,7 @@ class _ProfilePageState extends State<ProfilePage> {
         borderRadius: BorderRadius.circular(100),
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: NetworkImage(_firebaseService.currentUser!['image']),
+          image: NetworkImage(_firebaseService?.currentUser!['image']),
         ),
       ),
     );
